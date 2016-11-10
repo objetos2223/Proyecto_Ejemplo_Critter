@@ -1,5 +1,12 @@
 #include <iostream>
 
+/**
+ * @class Critter
+ * @author cominf
+ * @date 10/11/2016
+ * @file main.cpp
+ * @brief Esta clase representa a una mascota virtual.
+ */
 class Critter
 {
 private:
