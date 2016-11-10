@@ -70,5 +70,7 @@ int main(int argc, char **argv)
     crit2.saluda();
     std::cout << "El nivel de hambre es " << crit2.getHambre() << std::endl;
     std::cout << "Total de critters creados " << Critter::getTotal() << std::endl;
+    
+    crit3.saluda();
 	return 0;
 }
