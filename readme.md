@@ -1,16 +1,16 @@
 Proyecto Critter
 
-Un Critter es una mascota virtual el cual tiene un estado de 醤imo
+Un Critter es una mascota virtual el cual tiene un estado de 谩nimo
 que depende del nivel de hambre.
 
-La palabra const sirve para especificar una funci髇 de solo-lectura,
-es decir, una funci髇 que solamente consulta los valores del objeto
+La palabra const sirve para especificar una funci贸n de solo-lectura,
+es decir, una funci贸n que solamente consulta los valores del objeto
 pero no los modifica.
 
-Conceptos vistos hoy:
+Conceptos vistos en clase (8/nov/16):
 * estructuras vs clases
-* constructores y parametros por omisi髇
-* funciones const (s髄o lectura/no modifican las variables)
-* variables est醫icas (variables de la clase no del objeto)
-* funciones est醫icas (no pertenecen a un objeto en particular)
+* constructores y parametros por omisi贸n
+* funciones const (s贸lo lectura/no modifican las variables)
+* variables est谩ticas (variables de la clase no del objeto)
+* funciones est谩ticas (no pertenecen a un objeto en particular)
 
