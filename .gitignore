@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+Debug/.d
+Debug/main.cpp.o
+*.d
+Debug/Proyecto_Ejemplo_Critter.exe
