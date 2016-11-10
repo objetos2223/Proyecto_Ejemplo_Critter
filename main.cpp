@@ -13,14 +13,27 @@ private:
     int m_hambre;   // nivel del hambre
     int m_aburrido; // nivel del aburrimiento
     static int s_total;
+    void transcurreTiempo(int tiempo = 1);
 public:
     void habla();
     Critter(int hambre = 0, int aburrido = 0);
     void comer(int comida = 4);
+    void jugar(int tiempo = 3); // tarea
     void setHambre(int hambre);
     int getHambre() const;
     static int getTotal();
 };
+
+
+/**
+ * @brief Incrementa el nivel de hambre y de aburrimiento
+ * @param tiempo Cantidad del incremento de hambre y aburrimiento
+ */
+void Critter::transcurreTiempo(int tiempo)
+{
+    m_aburrido += tiempo;
+    m_hambre += tiempo;
+}
 
 /**
  * @brief Alimenta al critter disminuyendo su nivel de hambre
@@ -75,6 +88,7 @@ void Critter::habla()
     else {
         std::cout << "furioso\n";
     }
+    transcurreTiempo();
 }
 
 int Critter::getHambre() const
@@ -98,6 +112,10 @@ int main(int argc, char **argv)
     Critter crit2(6);
     Critter crit3(3, 8);
     crit1.habla();
+    crit2.habla();
+    crit2.habla();
+    crit2.habla();
+    crit2.habla();
     crit2.habla();
     crit2.comer();
     crit2.habla();
