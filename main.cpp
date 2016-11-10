@@ -16,10 +16,23 @@ private:
 public:
     void habla();
     Critter(int hambre = 0, int aburrido = 0);
+    void comer(int comida = 4);
     void setHambre(int hambre);
     int getHambre() const;
     static int getTotal();
 };
+
+/**
+ * @brief Alimenta al critter disminuyendo su nivel de hambre
+ * @param comida Es la cantidad de alimento para disminuir el hambre
+ */
+void Critter::comer(int comida)
+{
+    m_hambre -= comida;
+    if (m_hambre < 0)   {
+        m_hambre = 0;
+    }
+}
 
 // inicializacion de la variable estatica
 int Critter::s_total = 0;
@@ -86,6 +99,10 @@ int main(int argc, char **argv)
     Critter crit3(3, 8);
     crit1.habla();
     crit2.habla();
+    crit2.comer();
+    crit2.habla();
+    crit3.habla();
+    crit3.comer(7);
     crit3.habla();
 	return 0;
 }
