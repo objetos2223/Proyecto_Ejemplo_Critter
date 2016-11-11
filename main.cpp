@@ -36,11 +36,26 @@ void Critter::transcurreTiempo(int tiempo)
 }
 
 /**
+ * @brief Juega un determinado tiempo con el critter y disminuye
+ *        su nivel de aburrimiento.
+ * @param tiempo
+ */
+void Critter::jugar(int tiempo)
+{
+    std::cout << "Yupiii\n";
+    m_aburrido -= tiempo;
+    if (m_aburrido < 0) {
+        m_aburrido = 0;
+    }
+}
+
+/**
  * @brief Alimenta al critter disminuyendo su nivel de hambre
  * @param comida Es la cantidad de alimento para disminuir el hambre
  */
 void Critter::comer(int comida)
 {
+    std::cout << "Yumiii\n";
     m_hambre -= comida;
     if (m_hambre < 0)   {
         m_hambre = 0;
@@ -106,21 +121,32 @@ void Critter::setHambre(int hambre)
     }
 }
 
+void pruebaCritter()
+{
+    int opcion;
+    Critter crit;
+    
+    do
+    {
+        std::cout << "1 - Hablar con el critter\n";
+        std::cout << "2 - Alimentar al critter\n";
+        std::cout << "3 - Jugar con el critter\n";
+        std::cout << "0 - Salir\n";
+        std::cout << "Elige una opcion: ";
+        std::cin >> opcion;
+        switch (opcion) {
+            case 1 : crit.habla();
+            break;
+            case 2 : crit.comer();
+            break;
+            case 3 : crit.jugar();
+            break;
+        }
+    }   while (opcion != 0);
+}
+
 int main(int argc, char **argv)
 {
-    Critter crit1;
-    Critter crit2(6);
-    Critter crit3(3, 8);
-    crit1.habla();
-    crit2.habla();
-    crit2.habla();
-    crit2.habla();
-    crit2.habla();
-    crit2.habla();
-    crit2.comer();
-    crit2.habla();
-    crit3.habla();
-    crit3.comer(7);
-    crit3.habla();
+    pruebaCritter();
 	return 0;
 }
