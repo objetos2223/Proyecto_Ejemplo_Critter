@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 /**
  * @class Critter
@@ -24,6 +25,33 @@ public:
     static int getTotal();
 };
 
+class Granja
+{
+private:
+    std::vector<Critter> m_critters;
+public:
+    Granja();
+    void agrega(const Critter& nuevo);
+    void imprime();
+};
+
+Granja::Granja()
+{
+    std::cout << "Se ha creado la granja de critters!\n";
+    std::cout << "La ganja está vacía\n";
+}
+
+void Granja::agrega(const Critter& nuevo)
+{
+    m_critters.push_back(nuevo);
+}
+
+void Granja::imprime()
+{
+    for (unsigned int i = 0; i < m_critters.size(); i++) {
+        m_critters[i].habla();
+    }
+}
 
 /**
  * @brief Incrementa el nivel de hambre y de aburrimiento
@@ -121,6 +149,17 @@ void Critter::setHambre(int hambre)
     }
 }
 
+void pruebaGranja()
+{
+    Granja granjaCritters;
+    Critter c1, c2(6,8), c3(7);
+    
+    granjaCritters.agrega(c1);
+    granjaCritters.agrega(c2);
+    granjaCritters.agrega(c3);
+    granjaCritters.imprime();
+}
+
 void pruebaCritter()
 {
     int opcion;
@@ -147,6 +186,7 @@ void pruebaCritter()
 
 int main(int argc, char **argv)
 {
-    pruebaCritter();
+//    pruebaCritter();
+    pruebaGranja();
 	return 0;
 }
